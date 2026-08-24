@@ -13,19 +13,21 @@
 
 ## Table of Contents
 
-- [About](#about)
-- [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Architecture](#architecture)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Local Development (Docker)](#local-development-docker)
-  - [Production Deployment](#production-deployment)
-- [Configuration](#configuration)
-- [Documentation](#documentation)
-- [Screenshots](#screenshots)
-- [License](#license)
+- [SECAP Server](#secap-server)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Key Features](#key-features)
+  - [Tech Stack](#tech-stack)
+  - [Project Structure](#project-structure)
+  - [Architecture](#architecture)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Local Development (Docker)](#local-development-docker)
+    - [Production Deployment](#production-deployment)
+    - [Running without Docker (Python only)](#running-without-docker-python-only)
+  - [Configuration](#configuration)
+  - [Documentation](#documentation)
+  - [Screenshots](#screenshots)
 
 ## About
 
@@ -137,16 +139,16 @@ secapserver/
    └───┬────┘   └────┬────┘└────────┘└──────────┘ └───────────┘ └───────────┘
        │             │
        ▼             ▼
-  ┌─────────┐   ┌───────────────┐        ┌────────────────┐
-  │PostgreSQL│   │ Redis (broker)│◀──────▶│ celery_worker /  │
-  │  (db)    │   │               │        │ celery_beat      │
-  └─────────┘   └───────────────┘        └────────┬─────────┘
-                                                    │ SSH / WinRM
-                                                    ▼
+  ┌──────────┐   ┌───────────────┐        ┌────────────────┐
+  │PostgreSQL│   │ Redis (broker)│◀──────▶│ celery_worker /│
+  │  (db)    │   │               │        │ celery_beat    │
+  └──────────┘   └───────────────┘        └────────┬───────┘
+                                                   │ SSH / WinRM
+                                                   ▼
                                      ┌───────────────────────────┐
-                                     │ Target Clients (Linux/Win) │
-                                     │  oscap / Nessus scans,     │
-                                     │  remediation execution     │
+                                     │ Target Clients (Linux/Win)│
+                                     │  oscap / Nessus scans,    │
+                                     │  remediation execution    │
                                      └───────────────────────────┘
 ```
 
@@ -232,13 +234,33 @@ Or via Docker: it's already wired up as the `docs` service in both compose files
 
 ## Screenshots
 
-<!--
-  Add product screenshots / diagrams here, e.g.:
+**Run the project look like**
+![setup.sh](screenshots/image.png)
+![setup.sh](screenshots/image2.png)
 
-  ![Dashboard](docs/static/img/screenshot-dashboard.png)
-  ![Scan results](docs/static/img/screenshot-scan-results.png)
--->
+**LoginPage**
+![Login Page](screenshots/image3.png)
 
-## License
+**SECAP Dashboards**
+![secap dashboard](screenshots/image-8.png)
 
-No license file is currently included in this repository. Add one (e.g. `LICENSE`) if you intend to distribute this project.
+**SECAP Clients**
+![secap clients](screenshots/image-7.png)
+
+**SECAP Benchmarks**
+![secap benchmarks](screenshots/image-6.png)
+
+**SECAP Scans**
+![secap scans](screenshots/image-5.png)
+
+**SECAP Findings**
+![secap findings](screenshots/image-4.png)
+
+**SECAP Documentation**
+![secap docs](screenshots/image-1.png)
+
+**Portainer Dashboard**
+![Portainer](screenshots/image-2.png)
+
+**Flower Dashboard**
+![Flower](screenshots/image-3.png)
