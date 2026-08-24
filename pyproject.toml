@@ -1,0 +1,42 @@
+[project]
+name = "secapserver"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "django>=5.2,<6.0",
+    "django-celery-beat>=2.8,<3.0",
+    "django-crispy-forms>=2.4,<3.0",
+    "django-constance>=4.3,<5.0",
+    "django-debug-toolbar>=6.1,<7.0",
+    "django-guardian>=3.2,<4.0",
+    "django-import-export>=4.3,<5.0",
+    "django-simple-history>=3.10,<4.0",
+    "django-modeltranslation>=0.19,<0.20",
+    "django-money>=3.5,<4.0",
+    "djangoql>=0.18,<0.19",
+    "whitenoise>=6.11,<7.0",
+    "gunicorn>=23.0,<24.0",
+    "pillow>=12.0,<13.0",
+    "sentry-sdk[django]>=2.43,<3.0",
+    "pygments>=2.19,<3.0",
+    "dj-database-url>=3.1.2",
+    "django-unfold>=0.99.0",
+    "django-extensions>=4.1",
+    "ipython>=9.15.0",
+    "loguru>=0.7.3",
+    "asyncssh>=2.23.1",
+    "pandas>=3.0.3",
+    "pypsexec>=0.3.0",
+    "lxml>=6.1.1",
+    "psycopg[binary]",
+    "flower",
+    "redis",
+    "aioping>=0.4.0",
+    "requests>=2.34.2",
+    "bs4>=0.0.2",
+    "openpyxl>=3.1.5",
+    "ldap3>=2.9.1",
+    "hvac>=2.3.0",
+]
